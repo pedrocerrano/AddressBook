@@ -3,6 +3,8 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,6 +102,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4Kw-Dd-nlq" kind="show" id="R2z-su-9OH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -114,6 +119,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtR-eu-GOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1467.9389312977098" y="74.647887323943664"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="W2z-xF-NOr">
+            <objects>
+                <viewController id="4Kw-Dd-nlq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CpI-ca-GI9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="trf-ME-laC">
+                                <rect key="frame" x="20" y="113" width="353" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ome-F9-oVq">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWP-yE-dG8">
+                                        <rect key="frame" x="0.0" y="42" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dVM-gs-jwZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="trf-ME-laC" firstAttribute="top" secondItem="dVM-gs-jwZ" secondAttribute="top" constant="10" id="YyF-mD-HZJ"/>
+                            <constraint firstItem="dVM-gs-jwZ" firstAttribute="trailing" secondItem="trf-ME-laC" secondAttribute="trailing" constant="20" id="a7u-0o-Vgz"/>
+                            <constraint firstItem="trf-ME-laC" firstAttribute="leading" secondItem="dVM-gs-jwZ" secondAttribute="leading" constant="20" id="dYK-ef-MfU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jPB-JD-Hg7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4M3-F4-k8c"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvJ-rY-zhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196" y="75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VpU-SB-okD">
