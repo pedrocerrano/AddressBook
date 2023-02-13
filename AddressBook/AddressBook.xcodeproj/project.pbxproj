@@ -13,6 +13,9 @@
 		291E2547299AE38300AABA13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291E2545299AE38300AABA13 /* Main.storyboard */; };
 		291E2549299AE38400AABA13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291E2548299AE38400AABA13 /* Assets.xcassets */; };
 		291E254C299AE38400AABA13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291E254A299AE38400AABA13 /* LaunchScreen.storyboard */; };
+		291E2559299AE75800AABA13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E2558299AE75800AABA13 /* Person.swift */; };
+		291E255B299AE85D00AABA13 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E255A299AE85D00AABA13 /* Group.swift */; };
+		291E255D299AE9D000AABA13 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E255C299AE9D000AABA13 /* PersonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		291E2548299AE38400AABA13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		291E254B299AE38400AABA13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		291E254D299AE38400AABA13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		291E2558299AE75800AABA13 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		291E255A299AE85D00AABA13 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		291E255C299AE9D000AABA13 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +62,9 @@
 		291E253E299AE38300AABA13 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				291E2557299AE3EA00AABA13 /* View Controllers */,
-				291E2556299AE3E200AABA13 /* Model Controllers */,
 				291E2555299AE3D600AABA13 /* Models */,
+				291E2556299AE3E200AABA13 /* Model Controllers */,
+				291E2557299AE3EA00AABA13 /* View Controllers */,
 				291E2553299AE3A400AABA13 /* Storyboard */,
 				291E2554299AE3B300AABA13 /* Supporting Files */,
 			);
@@ -89,6 +95,8 @@
 		291E2555299AE3D600AABA13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				291E2558299AE75800AABA13 /* Person.swift */,
+				291E255A299AE85D00AABA13 /* Group.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 		291E2556299AE3E200AABA13 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				291E255C299AE9D000AABA13 /* PersonController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -180,6 +189,9 @@
 			files = (
 				291E2544299AE38300AABA13 /* ViewController.swift in Sources */,
 				291E2540299AE38300AABA13 /* AppDelegate.swift in Sources */,
+				291E2559299AE75800AABA13 /* Person.swift in Sources */,
+				291E255B299AE85D00AABA13 /* Group.swift in Sources */,
+				291E255D299AE9D000AABA13 /* PersonController.swift in Sources */,
 				291E2542299AE38300AABA13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
