@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Person {
-    let id = UUID()
+class Person: Codable {
+    var id = UUID()
     var name: String
     var address: String
     

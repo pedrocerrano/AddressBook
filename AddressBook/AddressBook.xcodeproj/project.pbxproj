@@ -16,6 +16,7 @@
 		291E2559299AE75800AABA13 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E2558299AE75800AABA13 /* Person.swift */; };
 		291E255B299AE85D00AABA13 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E255A299AE85D00AABA13 /* Group.swift */; };
 		291E255D299AE9D000AABA13 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E255C299AE9D000AABA13 /* PersonController.swift */; };
+		291E255F299AEE3F00AABA13 /* GroupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291E255E299AEE3F00AABA13 /* GroupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		291E2558299AE75800AABA13 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		291E255A299AE85D00AABA13 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		291E255C299AE9D000AABA13 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
+		291E255E299AEE3F00AABA13 /* GroupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				291E255C299AE9D000AABA13 /* PersonController.swift */,
+				291E255E299AEE3F00AABA13 /* GroupController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				291E2544299AE38300AABA13 /* ViewController.swift in Sources */,
 				291E2540299AE38300AABA13 /* AppDelegate.swift in Sources */,
+				291E255F299AEE3F00AABA13 /* GroupController.swift in Sources */,
 				291E2559299AE75800AABA13 /* Person.swift in Sources */,
 				291E255B299AE85D00AABA13 /* Group.swift in Sources */,
 				291E255D299AE9D000AABA13 /* PersonController.swift in Sources */,

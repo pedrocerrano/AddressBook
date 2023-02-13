@@ -14,7 +14,7 @@ class PersonController {
         let newPerson = Person(name: name, address: address)
         group.people.append(newPerson)
         
-// ADD SAVE
+        GroupController.sharedInstance.saveContactsToDisk()
     } //: CREATE
     
     
@@ -22,7 +22,7 @@ class PersonController {
         person.name     = newName
         person.address  = newAddress
         
-// ADD SAVE
+        GroupController.sharedInstance.saveContactsToDisk()
     } //: UPDATE
     
     
@@ -30,7 +30,7 @@ class PersonController {
         guard let personIndex = group.people.firstIndex(of: personToDelete) else { return }
         group.people.remove(at: personIndex)
 
-// ADD SAVE
+        GroupController.sharedInstance.saveContactsToDisk()
     } //: DELETE
     
 } //: CLASS
