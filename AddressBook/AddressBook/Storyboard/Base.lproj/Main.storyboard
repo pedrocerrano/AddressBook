@@ -12,13 +12,13 @@
         <!--Groups-->
         <scene sceneID="e42-PQ-Mzt">
             <objects>
-                <tableViewController id="9Kc-Lc-KzF" sceneMemberID="viewController">
+                <tableViewController id="9Kc-Lc-KzF" customClass="GroupsTableViewController" customModule="AddressBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="r8A-Ty-reJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="dc4-M0-Fd2" detailTextLabel="Hve-8K-HJV" style="IBUITableViewCellStyleValue1" id="ffs-AG-RQe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" textLabel="dc4-M0-Fd2" detailTextLabel="Hve-8K-HJV" style="IBUITableViewCellStyleValue1" id="ffs-AG-RQe">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ffs-AG-RQe" id="Vh9-EU-Xp7">
@@ -42,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="6Mx-S6-tzQ" kind="show" id="cWA-U5-KKQ"/>
+                                    <segue destination="6Mx-S6-tzQ" kind="show" identifier="toPeopleTableViewController" id="cWA-U5-KKQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -52,17 +52,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Groups" id="WoS-YX-9VD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BhP-8V-W32"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BhP-8V-W32">
+                            <connections>
+                                <action selector="addGroupButtonPressed:" destination="9Kc-Lc-KzF" id="hBo-f2-OeY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfG-ny-NMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="721" y="75"/>
         </scene>
-        <!--Table View Controller-->
+        <!--People Table View Controller-->
         <scene sceneID="geT-pe-ECJ">
             <objects>
-                <tableViewController id="6Mx-S6-tzQ" sceneMemberID="viewController">
+                <tableViewController id="6Mx-S6-tzQ" customClass="PeopleTableViewController" customModule="AddressBook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="gWT-tb-GMW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,14 +90,14 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Iqm-4l-m9g" style="IBUITableViewCellStyleDefault" id="3PL-vp-fzt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" textLabel="Iqm-4l-m9g" style="IBUITableViewCellStyleDefault" id="3PL-vp-fzt">
                                 <rect key="frame" x="0.0" y="110" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3PL-vp-fzt" id="LW4-X9-xr1">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iqm-4l-m9g">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="textLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iqm-4l-m9g">
                                             <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -103,7 +107,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="4Kw-Dd-nlq" kind="show" id="R2z-su-9OH"/>
+                                    <segue destination="4Kw-Dd-nlq" kind="show" identifier="toPersonVC" id="R2z-su-9OH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,17 +117,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="yB7-zk-rat">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZaU-hm-KEJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZaU-hm-KEJ">
+                            <connections>
+                                <action selector="addPersonButtonPressed:" destination="6Mx-S6-tzQ" id="Vfa-Rj-lZp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupNameTextField" destination="ve1-je-Z6R" id="H0a-6I-YqQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtR-eu-GOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1467.9389312977098" y="74.647887323943664"/>
         </scene>
-        <!--View Controller-->
+        <!--Person Detail View Controller-->
         <scene sceneID="W2z-xF-NOr">
             <objects>
-                <viewController id="4Kw-Dd-nlq" sceneMemberID="viewController">
+                <viewController id="4Kw-Dd-nlq" customClass="PersonDetailViewController" customModule="AddressBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CpI-ca-GI9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +164,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jPB-JD-Hg7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4M3-F4-k8c"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4M3-F4-k8c"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvJ-rY-zhK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

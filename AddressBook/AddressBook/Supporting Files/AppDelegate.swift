@@ -13,7 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //MARK: - MOCK DATA
+//        let texasBoys = Group(name: "Texas Boys", people: [Person(name: "Scotty", address: "Dallas"), Person(name: "Sea Bass", address: "Lubbock")])
+//        let utes = Group(name: "Utes", people: [Person(name: "Karl", address: "Salt Lake City"), Person(name: "Max", address: "Provo"), Person(name: "Matt", address: "St. George")])
+//        let mountainMan = Group(name: "Mountain Man", people: [Person(name: "Jake", address: "Colorado Springs")])
+//
+//        GroupController.sharedInstance.groups.append(contentsOf: [texasBoys, utes, mountainMan])
+        
         return true
     }
 
