@@ -86,7 +86,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U2l-Gn-Xjj">
                                             <rect key="frame" x="0.0" y="53" width="361" height="31"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wn-3D-kcI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(favorites toggle)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wn-3D-kcI">
                                                     <rect key="frame" x="0.0" y="0.0" width="304" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -151,14 +151,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="yB7-zk-rat">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="star.fill" catalog="system" id="9mG-TW-kok"/>
-                            <barButtonItem systemItem="add" id="ZaU-hm-KEJ">
-                                <connections>
-                                    <action selector="addPersonButtonPressed:" destination="6Mx-S6-tzQ" id="Vfa-Rj-lZp"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZaU-hm-KEJ">
+                            <connections>
+                                <action selector="addPersonButtonPressed:" destination="6Mx-S6-tzQ" id="Vfa-Rj-lZp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="groupNameTextField" destination="ve1-je-Z6R" id="H0a-6I-YqQ"/>
@@ -201,11 +198,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jPB-JD-Hg7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4M3-F4-k8c">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="4Kw-Dd-nlq" id="aKs-qp-FsZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="star.fill" catalog="system" id="Otu-Yh-C92"/>
+                            <barButtonItem systemItem="save" id="4M3-F4-k8c">
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="4Kw-Dd-nlq" id="aKs-qp-FsZ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="cWP-yE-dG8" id="eVe-eZ-fln"/>
