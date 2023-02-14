@@ -11,11 +11,18 @@ class PersonListTableViewController: UITableViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var groupNameTextField: UITextField!
-    
+    @IBOutlet weak var favoritesOnlyToggle: UISwitch!
     
     
     //MARK: - PROPERTIES
     var groupReceiver: Group?
+    private var filteredPeople: [Person] {
+        if favoritesOnlyToggle.isOn {
+            return groupReceiver?.people.filter { $0.isFavorites } ?? []
+        } else {
+            return groupReceiver?.people ?? []
+        } //: CONDITION
+    } //: COMPUTED PROPERTY
     
     
     //MARK: - LIFECYCLE
@@ -35,7 +42,7 @@ class PersonListTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let groupReceiver = groupReceiver,
-              let name = groupNameTextField.text else { return }
+              let name          = groupNameTextField.text else { return }
         GroupController.sharedInstance.updateGroup(groupToUpdate: groupReceiver, newName: name)
     } //: WillDISAPPEAR
     
@@ -46,7 +53,12 @@ class PersonListTableViewController: UITableViewController {
         guard let groupReceiver = groupReceiver else { return }
         PersonController.createPerson(group: groupReceiver)
         tableView.reloadData()
-    } //: ADD BUTTON
+    } //: ADD TAPPED
+    
+    
+    @IBAction func favoritesOnlyToggleTapped(_ sender: Any) {
+        tableView.reloadData()
+    } //: FAVORITES TAPPED
     
     
     
@@ -59,15 +71,15 @@ class PersonListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupReceiver?.people.count ?? 0
+        return filteredPeople.count
     } //: #ROWS
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell else { return UITableViewCell() }
-        cell.selectionStyle         = .none
+        cell.selectionStyle     = .none
         
-        let personObject = groupReceiver?.people[indexPath.row]
+        let personObject = filteredPeople[indexPath.row]
         cell.person      = personObject
         cell.delegate    = self
 
@@ -78,7 +90,7 @@ class PersonListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let groupReceiver = groupReceiver else { return }
-            let deleteThisPerson = groupReceiver.people[indexPath.row]
+            let deleteThisPerson = filteredPeople[indexPath.row]
             PersonController.deletePerson(personToDelete: deleteThisPerson, from: groupReceiver)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } //: DELETE ROW
@@ -90,7 +102,7 @@ class PersonListTableViewController: UITableViewController {
         if segue.identifier == "toPersonVC" {
             if let index = tableView.indexPathForSelectedRow {
                 if let destination = segue.destination as? PersonDetailViewController {
-                    let personToPass = groupReceiver?.people[index.row]
+                    let personToPass = filteredPeople[index.row]
                     destination.personReceiver = personToPass
                 } //: DESTINATION + OBJECT TO PASS/RECEIVE
             } //: INDEX

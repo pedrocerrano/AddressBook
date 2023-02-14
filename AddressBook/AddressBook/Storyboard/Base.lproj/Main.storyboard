@@ -86,7 +86,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U2l-Gn-Xjj">
                                             <rect key="frame" x="0.0" y="53" width="361" height="31"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(favorites toggle)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wn-3D-kcI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wn-3D-kcI">
                                                     <rect key="frame" x="0.0" y="0.0" width="304" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -94,6 +94,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zq8-i9-nXj">
                                                     <rect key="frame" x="312" y="0.0" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="favoritesOnlyToggleTapped:" destination="6Mx-S6-tzQ" eventType="valueChanged" id="OJE-OX-Ill"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </stackView>
@@ -163,6 +166,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoritesOnlyToggle" destination="Zq8-i9-nXj" id="b7O-3B-gC9"/>
                         <outlet property="groupNameTextField" destination="ve1-je-Z6R" id="H0a-6I-YqQ"/>
                     </connections>
                 </tableViewController>
