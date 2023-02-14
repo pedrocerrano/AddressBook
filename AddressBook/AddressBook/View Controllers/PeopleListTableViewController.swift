@@ -13,6 +13,7 @@ class PeopleListTableViewController: UITableViewController {
     @IBOutlet weak var groupNameTextField: UITextField!
     
     
+    
     //MARK: - PROPERTIES
     var groupReceiver: Group?
     

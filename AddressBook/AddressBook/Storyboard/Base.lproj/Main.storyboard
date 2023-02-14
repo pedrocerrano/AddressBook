@@ -129,6 +129,9 @@
                                                     <rect key="frame" x="271.66666666666669" y="0.0" width="65.333333333333314" height="34.666666666666664"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="(star)"/>
+                                                    <connections>
+                                                        <action selector="personFavoriteButtonTapped:" destination="3PL-vp-fzt" eventType="touchUpInside" id="CZa-8I-6ya"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -141,6 +144,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="personIsFavoriteButton" destination="Ww7-X2-nBO" id="r73-BZ-fMJ"/>
+                                    <outlet property="personNameLabel" destination="MZp-yL-u7A" id="ySt-dc-Tjw"/>
                                     <segue destination="4Kw-Dd-nlq" kind="show" identifier="toPersonVC" id="R2z-su-9OH"/>
                                 </connections>
                             </tableViewCell>
