@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PeopleTableViewController: UITableViewController {
+class PeopleListTableViewController: UITableViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var groupNameTextField: UITextField!
