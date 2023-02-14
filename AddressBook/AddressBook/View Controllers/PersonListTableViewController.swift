@@ -1,5 +1,5 @@
 //
-//  PeopleTableViewController.swift
+//  PersonListTableViewController.swift
 //  AddressBook
 //
 //  Created by iMac Pro on 2/13/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PeopleListTableViewController: UITableViewController {
+class PersonListTableViewController: UITableViewController {
 
     //MARK: - OUTLETS
     @IBOutlet weak var groupNameTextField: UITextField!

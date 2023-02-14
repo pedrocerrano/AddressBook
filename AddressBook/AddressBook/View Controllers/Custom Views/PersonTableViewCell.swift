@@ -1,5 +1,5 @@
 //
-//  PeopleTableViewCell.swift
+//  PersonTableViewCell.swift
 //  AddressBook
 //
 //  Created by iMac Pro on 2/14/23.
@@ -7,7 +7,11 @@
 
 import UIKit
 
-class PeopleTableViewCell: UITableViewCell {
+protocol PersonTableViewCellDelegate: AnyObject {
+    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell)
+} //: PROTOCOL
+
+class PersonTableViewCell: UITableViewCell {
 
     //MARK: - OUTLETS
     @IBOutlet weak var personNameLabel: UILabel!
@@ -15,6 +19,7 @@ class PeopleTableViewCell: UITableViewCell {
     
     
     //MARK: - PROPERTIES
+    weak var delegate: PersonTableViewCellDelegate?
     var person: Person? {
         didSet {
             udpateViews()
@@ -35,7 +40,7 @@ class PeopleTableViewCell: UITableViewCell {
     
     //MARK: - ACTIONS
     @IBAction func personFavoriteButtonTapped(_ sender: Any) {
-        
+        delegate?.toggleFavoriteButtonWasTapped(cell: self)
     } //: FAVORITE TAPPED
     
 } //: CLASS

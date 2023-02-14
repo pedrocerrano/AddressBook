@@ -64,7 +64,7 @@ class GroupsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPeopleTableViewController" {
             if let index = tableView.indexPathForSelectedRow {
-                if let destination = segue.destination as? PeopleListTableViewController {
+                if let destination = segue.destination as? PersonListTableViewController {
                     let groupToPass = GroupController.sharedInstance.groups[index.row]
                     destination.groupReceiver = groupToPass
                 } //: DESTINATION + OBJECT TO PASS/RECEIVE
