@@ -45,7 +45,7 @@ class PeopleTableViewController: UITableViewController {
         guard let groupReceiver = groupReceiver else { return }
         PersonController.createPerson(group: groupReceiver)
         tableView.reloadData()
-    }
+    } //: ADD BUTTON
     
     
     
@@ -53,7 +53,7 @@ class PeopleTableViewController: UITableViewController {
     func updateViews() {
         guard let groupReceiver = groupReceiver else { return }
         groupNameTextField.text = groupReceiver.name
-    }
+    } //: UPDATEVIEWS
     
 
     // MARK: - Table view data source
