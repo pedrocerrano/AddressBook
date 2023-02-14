@@ -33,4 +33,11 @@ class PersonController {
         GroupController.sharedInstance.saveContactsToDisk()
     } //: DELETE
     
+    
+    //MARK: - HELPER FUNCTIONS
+    static func toggleFavorites(person: Person) {
+        person.isFavorites.toggle()
+        GroupController.sharedInstance.saveContactsToDisk()
+    } //: TOGGLE
+    
 } //: CLASS

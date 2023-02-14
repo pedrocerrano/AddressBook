@@ -11,10 +11,12 @@ class Person: Codable {
     var id = UUID()
     var name: String
     var address: String
+    var isFavorites: Bool
     
-    init(name: String, address: String) {
-        self.name = name
-        self.address = address
+    init(name: String, address: String, isFavorite: Bool = false) {
+        self.name        = name
+        self.address     = address
+        self.isFavorites = isFavorite
     } //: MEMBERWISE INIALIZER
     
 } //: CLASS
