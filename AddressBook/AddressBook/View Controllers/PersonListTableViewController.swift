@@ -64,15 +64,12 @@ class PersonListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath) as? PersonTableViewCell else { return UITableViewCell() }
         cell.selectionStyle         = .none
         
-        let personDisplayed         = groupReceiver?.people[indexPath.row]
-        
-        var peopleCellConfig        = cell.defaultContentConfiguration()
-        peopleCellConfig.text       = personDisplayed?.name
-        cell.contentConfiguration   = peopleCellConfig
-        
+        let personObject = groupReceiver?.people[indexPath.row]
+        cell.person      = personObject
+        cell.delegate    = self
 
         return cell
     } //: CONFIG CELL
@@ -101,3 +98,14 @@ class PersonListTableViewController: UITableViewController {
     } //: SEGUE
 
 } //: CLASS
+
+
+extension PersonListTableViewController: PersonTableViewCellDelegate {
+    func toggleFavoriteButtonWasTapped(cell: PersonTableViewCell) {
+        guard let personIndex = cell.person else { return }
+        PersonController.toggleFavorites(person: personIndex)
+        cell.udpateViews()
+    } //: PROTOCOL IMPLEMENTATION
+    
+    
+} //: EXTENSION

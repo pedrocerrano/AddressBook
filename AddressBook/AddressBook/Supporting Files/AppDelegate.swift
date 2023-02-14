@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //MARK: - MOCK DATA
 //        let texasBoys = Group(name: "Texas Boys", people: [Person(name: "Scotty", address: "Dallas"), Person(name: "Sea Bass", address: "Lubbock")])
-//        let utes = Group(name: "Utes", people: [Person(name: "Karl", address: "Salt Lake City"), Person(name: "Max", address: "Provo"), Person(name: "Matt", address: "St. George")])
+//        let utes = Group(name: "Utes", people: [Person(name: "Karl", address: "Salt Lake City"), Person(name: "Max", address: "Provo"), Person(name: "Matt", address: "St. George"), Person(name: "Colton", address: "St. George")])
 //        let mountainMan = Group(name: "Mountain Man", people: [Person(name: "Jake", address: "Colorado Springs")])
+//        let downSouth = Group(name: "Down South", people: [Person(name: "Chase", address: "Ball Ground")])
 //
-//        GroupController.sharedInstance.groups.append(contentsOf: [texasBoys, utes, mountainMan])
+//        GroupController.sharedInstance.groups.append(contentsOf: [texasBoys, utes, mountainMan, downSouth])
         
         return true
     }
