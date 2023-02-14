@@ -199,7 +199,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="jPB-JD-Hg7">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="star.fill" catalog="system" id="Otu-Yh-C92"/>
+                            <barButtonItem title="Item" image="star.fill" catalog="system" id="Otu-Yh-C92">
+                                <connections>
+                                    <action selector="favoriteButtonTapped:" destination="4Kw-Dd-nlq" id="pq4-n5-Mgc"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="save" id="4M3-F4-k8c">
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="4Kw-Dd-nlq" id="aKs-qp-FsZ"/>
@@ -209,6 +213,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="cWP-yE-dG8" id="eVe-eZ-fln"/>
+                        <outlet property="personFavoriteButton" destination="Otu-Yh-C92" id="kOa-PX-ksf"/>
                         <outlet property="personNameTextField" destination="ome-F9-oVq" id="ycq-j6-X3d"/>
                     </connections>
                 </viewController>

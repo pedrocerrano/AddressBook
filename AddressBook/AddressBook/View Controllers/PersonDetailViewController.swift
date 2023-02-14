@@ -12,6 +12,8 @@ class PersonDetailViewController: UIViewController {
     //MARK: - OUTLETS
     @IBOutlet weak var personNameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var personFavoriteButton: UIBarButtonItem!
+    
     
     //MARK: - PROPERTIES
     var personReceiver: Person?
@@ -25,7 +27,6 @@ class PersonDetailViewController: UIViewController {
     
     
     //MARK: - ACTIONS
-    
     @IBAction func saveButtonPressed(_ sender: Any) {
         guard let personReceiver = personReceiver,
               let name = personNameTextField.text,
@@ -33,7 +34,15 @@ class PersonDetailViewController: UIViewController {
         PersonController.updatePerson(person: personReceiver, newName: name, newAddress: address)
         
         navigationController?.popViewController(animated: true)
-    } //: SAVE BUTTON
+    } //: SAVE TAPPED
+    
+    
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        guard let personReceiver = personReceiver else { return }
+        
+        PersonController.toggleFavorites(person: personReceiver)
+        updateFavoriteButton()
+    } //: FAVORITE TAPPED
     
     
     //MARK: - HELPER FUNCTIONS
@@ -41,7 +50,17 @@ class PersonDetailViewController: UIViewController {
         guard let personReceiver    = personReceiver else { return }
         personNameTextField.text    = personReceiver.name
         addressTextField.text       = personReceiver.address
+        
+        updateFavoriteButton()
     } //: UPDATEVIEWS
     
+    
+    func updateFavoriteButton() {
+        guard let personReceiver = personReceiver else { return }
+        
+        let favoriteImageName       = personReceiver.isFavorites ? "star.fill" : "star"
+        let favoriteImage           = UIImage(systemName: favoriteImageName)
+        personFavoriteButton.image  = favoriteImage
+    } //: UPDATE FAVORITES
     
 } //: CLASS
